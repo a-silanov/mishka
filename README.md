@@ -1,6 +1,6 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: [Артем Вафин](https://up.htmlacademy.ru/adaptive/20/user/1394233).
+* Студент: Александр Силанов](https://github.com/a-silanov/mishka).
 * Наставник: `Неизвестно`.
 
 ---
