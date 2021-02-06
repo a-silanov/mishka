@@ -1,0 +1,145 @@
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: transparentize($basic-white, 0.1);
+  z-index: 100;
+
+  &--active {
+    display: flex;
+    animation: fadeIn 0.5s;
+  }
+}
+
+.cart__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 336px;
+  padding: 0 30px;
+  padding-top: 29px;
+  padding-bottom: 46px;
+  border: 1px solid $special-grey-mid-2;
+  background-color: $basic-white;
+  box-shadow: 0 5px 10px transparentize($special-black, 0.75);
+
+  @media (min-width: $tablet-width) {
+    width: 566px;
+    padding: 0 105px;
+    padding-top: 38px;
+  }
+}
+
+.cart__title {
+  width: 163px;
+  padding-bottom: 15px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    padding-bottom: 11px;
+    font-size: 30px;
+  }
+}
+
+.cart__text {
+  padding-bottom: 15px;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 17px;
+  }
+}
+
+.cart__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cart__block {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 32px;
+  border: none;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 29px;
+  }
+}
+
+.cart__list {
+  @include list-none;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cart__name {
+  display: block;
+  line-height: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.cart__btn {
+  width: 100%;
+  margin-top: auto;
+  border: none;
+  color: $basic-white;
+  background-color: $basic-green;
+
+  &:focus,
+  &:hover {
+    margin-bottom: -5px;
+    background-color: $special-green-2;
+    z-index: 2;
+  }
+}
+
+.cart__check {
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    & + .cart__box {
+      border: 2px solid transparentize($special-grey-dark, 0.7);
+    }
+  }
+
+  &:checked {
+    & + .cart__box {
+      border: 2px solid $special-green;
+    }
+  }
+}
+
+.cart__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 52px;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 16px;
+  border: 2px solid transparentize($special-grey-dark, 0.9);
+
+  @media (min-width: $tablet-width) {
+    width: 112px;
+  }
+}

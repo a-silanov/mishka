@@ -1,0 +1,138 @@
+.about {
+  padding: 0 30px;
+  padding-top: 38px;
+  padding-bottom: 57px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    padding-top: 73px;
+    padding-bottom: 81px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 224px;
+    padding-top: 89px;
+    padding-bottom: 88px;
+  }
+}
+
+.about__list {
+  @include list-none;
+
+  @media (min-width: $tablet-width) {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 334px 334px;
+    padding-top: 15px;
+    row-gap: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-self: start;
+    column-gap: 18px;
+  }
+}
+
+.about__item {
+  padding-top: 83px;
+
+  @media (min-width: $tablet-width) {
+    &--cost {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    &--like {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+  }
+}
+
+.about__text {
+  position: relative;
+  margin: 0;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+
+  @media (min-width: $mobile-width-rubber) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 22px;
+
+    br {
+      display: inline;
+    }
+  }
+
+  &::before {
+    @include pseudo;
+
+    top: -54px;
+    background-repeat: no-repeat;
+  }
+
+  &--eco {
+    &::before {
+      left: 8px;
+      width: 33px;
+      height: 38px;
+      background-image: url("../../img/icon-feature-flower.svg");
+    }
+  }
+
+  &--cost {
+    &::before {
+      width: 47px;
+      height: 27px;
+      background-image: url("../../img/icon-feature-money.svg");
+    }
+  }
+
+  &--like {
+    &::before {
+      left: 8px;
+      top: -49px;
+      width: 34px;
+      height: 27px;
+      background-image: url("../../img/icon-feature-heart.svg");
+    }
+  }
+
+  &--handmade {
+    &::before {
+      top: -52px;
+      left: 4px;
+      width: 35px;
+      height: 34px;
+      background-image: url("../../img/icon-feature-ball.svg");
+    }
+  }
+
+  &--support {
+    &::before {
+      top: -51px;
+      left: -5px;
+      width: 55px;
+      height: 23px;
+      background-image: url("../../img/icon-feature-rocket.svg");
+    }
+  }
+
+  &--gift {
+    &::before {
+      left: 3px;
+      width: 33px;
+      height: 32px;
+      background-image: url("../../img/icon-feature-gift.svg");
+    }
+  }
+}

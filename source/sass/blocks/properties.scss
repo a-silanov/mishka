@@ -1,0 +1,39 @@
+.properties {
+  margin: 0;
+}
+
+.properties__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 40px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $special-grey;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+  }
+}
+
+.properties__description {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.properties__item,
+.properties__description {
+  text-align: left;
+  font-size: 15px;
+  line-height: 20px;
+  color: $special-grey-dark;
+}
+
+.properties__item {
+  width: 100px;
+
+  @media (min-width: $tablet-width) {
+    width: 97px;
+  }
+}

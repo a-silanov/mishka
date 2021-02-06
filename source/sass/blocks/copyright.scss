@@ -1,0 +1,41 @@
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 78px;
+
+  @media (min-width: $desktop-width) {
+    justify-content: flex-end;
+  }
+}
+
+.copyright__text {
+  padding-right: 27px;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 18px;
+  color: $basic-black;
+}
+
+.copyright__icon {
+  width: 27px;
+  height: 34px;
+  fill: $basic-green;
+}
+
+.copyright__img {
+  outline: none;
+
+  &:hover,
+  &:focus {
+    .copyright__icon {
+      fill: $special-green-3;
+    }
+  }
+
+  &:active {
+    .copyright__icon {
+      fill: transparentize($special-green-3, 0.3);
+    }
+  }
+}

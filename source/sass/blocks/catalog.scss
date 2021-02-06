@@ -1,0 +1,237 @@
+.catalog__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 73px 30px;
+  font-size: 27px;
+  background-color: $basic-grey;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    height: 235px;
+    font-size: 43px;
+    padding: 0;
+    padding-top: 14px;
+
+    &::after {
+      @include pseudo;
+      top: 100%;
+      width: 100%;
+      height: 24px;
+      margin-top: -23px;
+      background-image: url("../../img/bg-zigzag.svg");
+      background-repeat: repeat;
+      z-index: 10;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 261px;
+    padding: 0;
+    font-size: 53px;
+
+    &::after {
+      height: 34px;
+      background-size: contain;
+    }
+  }
+}
+
+.catalog__list {
+  @include list-none;
+  display: grid;
+  grid-template-rows: min-content;
+  row-gap: 30px;
+  padding: 30px;
+  padding-bottom: 31px;
+
+  @media (min-width: $tablet-width) {
+    padding: 68px 50px;
+    padding-bottom: 53px;
+    row-gap: 54px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 51px;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 56px;
+  }
+}
+
+.catalog__item {
+  min-height: 374px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 334px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 316px;
+    grid-template-rows: min-content;
+
+    &:hover,
+    &:focus-within {
+      &:hover,
+      &:focus-within {
+        & .catalog__wrapper {
+          box-shadow: 0 6px 10px transparentize($basic-black, 0.9);
+        }
+      }
+
+      &:active {
+        & .catalog__wrapper {
+          box-shadow: 0 3px 5px transparentize($basic-black, 0.9);
+        }
+      }
+    }
+  }
+}
+
+.catalog__wrapper {
+  min-height: 179px;
+  padding: 0 27px;
+  padding-top: 27px;
+  border: 1px solid $special-grey;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 6px 10px transparentize($basic-black, 0.9);
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px transparentize($basic-black, 0.9);
+  }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    padding-top: 27px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 197px;
+    padding: 0 28px;
+    padding-top: 27px;
+  }
+}
+
+.catalog__link {
+  display: block;
+
+  &--subtitle {
+    width: 202px;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    color: $basic-black;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    @media (min-width: $tablet-width) {
+      width: 230px;
+      font-size: 20px;
+    }
+  }
+}
+
+.catalog__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog__subtitle {
+  display: block;
+  width: 202px;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 24px;
+  color: $basic-black;
+
+  @media (min-width: $tablet-width) {
+    width: 230px;
+    font-size: 20px;
+  }
+}
+
+.catalog__description {
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 17px;
+  font-size: 13px;
+  line-height: 30px;
+
+  &--cost {
+    padding: 0;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    border-bottom: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 15px;
+
+    &--cost {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 0;
+  }
+}
+
+.catalog__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 23px;
+  padding-bottom: 25px;
+  border-top: 1px solid $special-grey;
+
+  @media (min-width: $tablet-width) {
+    margin-top: auto;
+  }
+}
+
+.catalog__button {
+  border: none;
+  padding: 0;
+  background-color: $basic-white;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    & .catalog__icon {
+      fill: $basic-green;
+    }
+  }
+
+  &:active {
+    & .catalog__icon {
+      fill: $basic-green;
+      opacity: 0.3;
+    }
+  }
+}
+
+.catalog__icon {
+  fill: $special-grey-adv-1;
+}

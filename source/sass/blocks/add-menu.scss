@@ -1,0 +1,28 @@
+.add-menu__list {
+  @include list-none;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-menu__item {
+  &:not(:last-child) {
+    padding-right: 63px;
+  }
+}
+
+.add-menu__link {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  color: $basic-black;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

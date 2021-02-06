@@ -1,0 +1,230 @@
+.promo {
+  display: grid;
+  grid-template-rows: 1fr min-content min-content;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    grid-template-rows: 1fr;
+    margin-bottom: 42px;
+
+    &::after {
+      @include pseudo;
+      top: 100%;
+      width: 100%;
+      height: 24px;
+      margin-top: -23px;
+      background-image: url("../../img/bg-zigzag.svg");
+      background-repeat: repeat;
+      z-index: 10;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 61px;
+
+    &::after {
+      height: 34px;
+      background-size: contain;
+    }
+  }
+}
+
+.promo__wrapper {
+  display: flex;
+  padding: 0 30px;
+  justify-content: center;
+  align-items: center;
+  min-height: 282px;
+  padding-bottom: 49px;
+  background-image: url("../../img/hero-mobile@1x.jpg");
+  background-color: $basic-grey-adv;
+  background-clip: padding-box;
+  background-position: center;
+  background-position-y: -17px;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/hero-mobile@2x.jpg");
+    background-size: 575px auto;
+  }
+
+  @media (min-width: $tablet-width) {
+    align-items: start;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    padding: 0;
+    padding-top: 154px;
+    min-height: 754px;
+    background-image: url("../../img/hero-tablet@1x.jpg");
+    background-position-y: -2px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/hero-tablet@2x.jpg");
+      background-size: 1150px auto;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: url("../../img/hero-desktop@1x.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/hero-desktop@2x.jpg");
+      background-size: 1150px auto;
+    }
+  }
+}
+
+.promo__description {
+  margin: 0;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 30px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 510px;
+    padding-right: 11px;
+    font-size: 43px;
+    line-height: 50px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 620px;
+    padding-right: 7px;
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+.promo__list {
+  @include list-none;
+
+  margin-bottom: 31px;
+  transition-duration: 0.5s;
+
+  @media (min-width: $tablet-width) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-self: end;
+    display: flex;
+    width: 100%;
+    padding: 0 50px;
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1150px;
+    margin: 0 auto;
+
+    &:hover,
+    &:focus,
+    &:active {
+      margin: 0 auto;
+    }
+  }
+}
+
+.promo__item {
+  position: relative;
+  height: 103px;
+  transition-duration: 0.5s;
+
+  &:nth-child(odd) {
+    background-color: $basic-green;
+
+    @media (min-width: $desktop-width) {
+      &:focus,
+      &:hover {
+        background-color: $special-green-2;
+        z-index: 2;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: $special-green;
+
+    @media (min-width: $desktop-width) {
+      &:focus,
+      &:hover {
+        background-color: $special-green-3;
+        z-index: 2;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    height: 129px;
+  }
+
+  @media (min-width: $desktop-width) {
+    &:focus,
+    &:hover {
+      height: 134px;
+      margin-top: -5px;
+    }
+  }
+}
+
+.promo__link {
+  display: block;
+  height: 100%;
+  padding: 0 30px;
+  padding-top: 25px;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: $basic-white;
+  text-decoration: none;
+  transition-duration: 0.5s;
+  outline: none;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 25px 36px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    &:hover,
+    &:focus {
+      padding-top: 20px;
+
+      & .promo__img {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      & .promo__img {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.promo__img {
+  position: absolute;
+  right: 35px;
+  top: 24px;
+  fill: $special-green-dark;
+
+  &--toy {
+    right: 27px;
+    top: 22px;
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 29px;
+
+    &--toy {
+      right: 33px;
+      top: 32px;
+    }
+  }
+}
